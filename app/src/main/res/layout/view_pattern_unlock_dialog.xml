@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundBg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <com.rair.diary.view.LockPattern
+        android:id="@+id/unlock_lp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:arrow_color="@color/colorPrimary"
+        app:inner_color="@color/colorPrimaryLight"
+        app:line_color="@color/colorPrimary"
+        app:outer_color="@color/colorPrimaryLight"
+        app:selected_inner_color="@color/colorPrimaryDark"
+        app:selected_outer_color="@color/colorPrimaryDark" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="请绘制图案解锁"
+        android:textColor="@color/secondary_text"
+        android:textSize="16sp" />
+</LinearLayout>

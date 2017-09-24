@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.rair.diary.ui.diary.detail.DiaryDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary">
+
+        <com.rair.diary.view.RippleView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/detail_iv_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@mipmap/ic_back" />
+        </com.rair.diary.view.RippleView>
+
+        <TextView
+            android:id="@+id/detail_tv_tite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="日记内容"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <com.rair.diary.view.RippleView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/detail_iv_save"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:src="@mipmap/ic_save"
+                android:visibility="gone" />
+        </com.rair.diary.view.RippleView>
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        app:cardBackgroundColor="?attr/backgroundBg"
+        app:cardCornerRadius="6dp"
+        app:contentPadding="3dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/detail_et_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/editor_shape"
+                android:ellipsize="end"
+                android:enabled="false"
+                android:hint="请输入标题"
+                android:maxLines="1"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/secondary_text"
+                android:textSize="16sp" />
+
+            <com.rair.diary.view.LinedEditText
+                android:id="@+id/detail_et_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/editor_shape"
+                android:enabled="false"
+                android:gravity="top"
+                android:hint="写点什么吧"
+                android:lineSpacingExtra="8dp"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/secondary_text"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/detail_iv_show"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:visibility="visible" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/detail_ll_option"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/detail_fab_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_edit"
+            app:rippleColor="@color/colorPrimaryDark" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/detail_fab_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:src="@mipmap/ic_delete"
+            app:rippleColor="@color/colorPrimaryDark" />
+
+    </LinearLayout>
+</LinearLayout>

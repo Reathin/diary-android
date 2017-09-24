@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">时光记</string>
+    <string name="diary">日记</string>
+    <string name="setting">设置</string>
+    <string name="mine">我的</string>
+    <string name="find">发现</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+
+    <string-array name="weather">
+        <item name="sunny">晴朗</item>
+        <item name="cloudy">多云</item>
+        <item name="overcast">阴天</item>
+        <item name="rain">降雨</item>
+        <item name="snow">降雪</item>
+        <item name="hail">冰雹</item>
+        <item name="smoky">烟雾</item>
+        <item name="sandstorm">沙尘暴</item>
+    </string-array>
+
+    <string name="option">操作</string>
+    <string name="share">分享</string>
+    <string name="publish">发布</string>
+    <string name="delete">删除</string>
+    <string name="export">导出</string>
+    <string name="empty">清空</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+
+    <string name="delete_sure">确定要删除吗？</string>
+    <string name="delete_over">日记已经删除！</string>
+
+    <string name="is_export">是否导出此日记？</string>
+    <string name="save_success">导出成功！保存到SDCard/RairDiary/</string>
+    <string name="save_failed">导出失败！</string>
+
+    <string name="emptyall">清空</string>
+    <string name="empty_all">确定要清空吗？清空将无法恢复!</string>
+    <string name="emptyed">日记已清空！</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">搜索日记</string>
+    <string name="create">创建于：%s</string>
+    <string name="shareby">分享于：%s</string>
+</resources>

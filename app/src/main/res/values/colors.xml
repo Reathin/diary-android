@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#4CAF50</color>
+    <color name="colorPrimaryLight">#C8E6C9</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="white">#ffffff</color>
+    <color name="divider">#dfdcd5</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="backgroundColor">#ffffff</color>
+
+    <color name="thrid_text">#4CAF50</color>
+    <color name="thrid_text2">#4CAF50</color>
+    <color name="ripple">#388E3C</color>
+    <color name="bg_color">#eeeade</color>
+
+    <color name="text_bg">#EEEEEE</color>
+    <color name="red">#ff5252</color>
+    <color name="pink">#ff4081</color>
+    <color name="green">#4CAF50</color>
+    <color name="purple">#e040fb</color>
+    <color name="blue">#448aff</color>
+    <color name="yellow">#ffff00</color>
+    <color name="grey">#616161</color>
+    <color name="orange">#ffab40</color>
+    <color name="teal">#18ffff</color>
+
+</resources>

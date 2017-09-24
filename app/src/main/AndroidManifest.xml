@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rair.diary">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name=".base.RairApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/AppTheme.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.diary.add.AddDiaryActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".ui.diary.detail.DiaryDetailActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".ui.setting.remind.NotifyActivity" />
+        <activity android:name=".ui.setting.secret.SecretActivity" />
+        <activity android:name=".ui.setting.export.ExportActivity" />
+        <activity android:name=".ui.setting.about.AboutActivity" />
+        <activity android:name=".ui.setting.user.UserActivity" />
+        <activity android:name=".ui.setting.user.LoginActivity" />
+        <activity android:name=".ui.setting.recover.RecoverActivity" />
+        <activity android:name=".ui.find.FindDetailActivity" />
+        <activity
+            android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="adjustResize|stateHidden|adjustPan|stateUnchanged" />
+        <activity
+            android:name=".ui.setting.feedback.FeedBackActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <service android:name=".service.RemindService">
+            <intent-filter android:priority="999">
+                <category android:name="android.intent.category.default" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".receiver.RairReceiver">
+            <intent-filter>
+                <action android:name="com.rair.time" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.werb.pickphotosample"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+    </application>
+
+</manifest>
