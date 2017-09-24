@@ -16,12 +16,9 @@ QQ_KEY：QQ群加群组件key
 后端使用的Bmob，请自行注册.
 
 ### 截图
-
-./master/screenshots/Screenshot1.png
-
-./master/screenshots/Screenshot2.png
-
-./master/screenshots/Screenshot3.png
+![1]
+![2]
+![3]
 
 ### 功能
 纯粹的一个日记本应用
@@ -38,4 +35,8 @@ QQ_KEY：QQ群加群组件key
 
 欢迎您联系反馈，rairmmd@gmail.com
 
+[1]:https://github.com/Rairmmd/Diary/blob/master/screenshots/Screenshot1.jpg
 
+[2]:https://github.com/Rairmmd/Diary/blob/master/screenshots/Screenshot2.png
+
+[3]:https://github.com/Rairmmd/Diary/blob/master/screenshots/Screenshot3.jpg
