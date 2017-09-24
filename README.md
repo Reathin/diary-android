@@ -17,11 +17,11 @@ QQ_KEY：QQ群加群组件key
 
 ### 截图
 
-https://github.com/Rairmmd/Diary/blob/master/screenshots/Screenshot1.png?raw=true
+./master/screenshots/Screenshot1.png
 
-https://github.com/Rairmmd/Diary/blob/master/screenshots/Screenshot2.png?raw=true
+./master/screenshots/Screenshot2.png
 
-https://github.com/Rairmmd/Diary/blob/master/screenshots/Screenshot3.png?raw=true
+./master/screenshots/Screenshot3.png
 
 ### 功能
 纯粹的一个日记本应用
