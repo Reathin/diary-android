@@ -1,20 +1,17 @@
 package com.rair.diary.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.annotation.Nullable;
 import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.rair.diary.R;
 import com.rair.diary.bean.Comment;
 import com.rair.diary.bean.User;
-import com.rair.diary.view.CircleImageView;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import cn.bmob.v3.datatype.BmobFile;
 
@@ -24,62 +21,36 @@ import cn.bmob.v3.datatype.BmobFile;
  * Author:Rair
  */
 
-public class CommentRvAdapter extends RecyclerView.Adapter<CommentRvAdapter.CommentHolder> {
+public class CommentRvAdapter extends BaseQuickAdapter<Comment, BaseViewHolder> {
 
     private Context context;
-    private ArrayList<Comment> datas;
 
-    public CommentRvAdapter(Context context, ArrayList<Comment> datas) {
+    public CommentRvAdapter(Context context, int layoutResId, @Nullable List<Comment> data) {
+        super(layoutResId, data);
         this.context = context;
-        this.datas = datas;
     }
 
     @Override
-    public CommentHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.view_comment_item, parent, false);
-        return new CommentHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(CommentHolder holder, int position) {
-        Comment comment = datas.get(position);
-        User user = comment.getUser();
+    protected void convert(BaseViewHolder helper, Comment item) {
+        User user = item.getUser();
+        ImageView sexView = helper.getView(R.id.comment_item_iv_sex);
         if (user.getSex() != null) {
             if (user.getSex().equals("nan")) {
-                Picasso.with(context).load(R.mipmap.male).into(holder.ivSex);
+                Picasso.with(context).load(R.mipmap.male).into(sexView);
             } else {
-                Picasso.with(context).load(R.mipmap.female).into(holder.ivSex);
+                Picasso.with(context).load(R.mipmap.female).into(sexView);
             }
         }
+        ImageView headView = helper.getView(R.id.comment_item_civ_head);
         if (user.getHeadFile() != null) {
             BmobFile headFileFile = user.getHeadFile();
-            Picasso.with(context).load(headFileFile.getFileUrl()).into(holder.civHead);
+            Picasso.with(context).load(headFileFile.getFileUrl()).into(headView);
         } else {
-            Picasso.with(context).load(R.mipmap.ic_head).into(holder.civHead);
+            Picasso.with(context).load(R.mipmap.ic_head).into(headView);
         }
-        holder.tvName.setText(user.getNickName());
-        holder.tvContent.setText(comment.getContent());
-        holder.tvTime.setText(comment.getCommentTime());
+        helper.setText(R.id.comment_item_tv_name, user.getNickName());
+        helper.setText(R.id.comment_item_tv_time, item.getCommentTime());
+        helper.setText(R.id.comment_item_tv_content, item.getContent());
     }
 
-    @Override
-    public int getItemCount() {
-        return datas.size();
-    }
-
-    class CommentHolder extends RecyclerView.ViewHolder {
-
-        private CircleImageView civHead;
-        private ImageView ivSex;
-        private TextView tvName, tvTime, tvContent;
-
-        CommentHolder(View itemView) {
-            super(itemView);
-            civHead = (CircleImageView) itemView.findViewById(R.id.comment_item_civ_head);
-            ivSex = (ImageView) itemView.findViewById(R.id.comment_item_iv_sex);
-            tvName = (TextView) itemView.findViewById(R.id.comment_item_tv_name);
-            tvTime = (TextView) itemView.findViewById(R.id.comment_item_tv_time);
-            tvContent = (TextView) itemView.findViewById(R.id.comment_item_tv_content);
-        }
-    }
 }

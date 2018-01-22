@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.rair.diary.R;
 import com.rair.diary.base.RairApp;
 import com.rair.diary.bean.DiaryBean;
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 import com.rair.diary.db.DiaryDao;
 import com.rair.diary.utils.RairUtils;
 
@@ -134,7 +134,7 @@ public class ExportActivity extends AppCompatActivity {
      */
     private void doExportTxt() {
         progressDialog.show();
-        final String path = new File(rairPath, Constans.TXT_NAME).getAbsolutePath();
+        final String path = new File(rairPath, Constants.TXT_NAME).getAbsolutePath();
         if (diarys.size() > 0) {
             new Thread(new Runnable() {
                 @Override
@@ -159,8 +159,8 @@ public class ExportActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                String dbPath = ExportActivity.this.getDatabasePath(Constans.DB_NAME).getAbsolutePath();
-                String sdPath = new File(rairPath, Constans.Export_NAME).getAbsolutePath();
+                String dbPath = ExportActivity.this.getDatabasePath(Constants.DB_NAME).getAbsolutePath();
+                String sdPath = new File(rairPath, Constants.Export_NAME).getAbsolutePath();
                 boolean success = copyFile(dbPath, sdPath);
                 if (success) {
                     Message message = Message.obtain(handler, 0);

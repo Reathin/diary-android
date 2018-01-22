@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 
 import com.rair.diary.config.Cockroach;
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 import com.rair.diary.utils.SPUtils;
 import com.rair.diary.utils.Utils;
 
@@ -28,8 +28,8 @@ public class RairApp extends Application {
         super.onCreate();
         rairApp = this;
         Utils.init(this);
-        spUtils = new SPUtils(Constans.SP_NAME);
-        Bmob.initialize(this, Constans.APP_ID);
+        spUtils = new SPUtils(Constants.SP_NAME);
+        Bmob.initialize(this, Constants.APP_ID);
 //        Cockroach.install(exceptionHandler);
         configTheme();
     }
@@ -61,8 +61,10 @@ public class RairApp extends Application {
     public File getRairPath() {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             File storageDirectory = Environment.getExternalStorageDirectory();
-            File rairFile = new File(storageDirectory, Constans.RAIR_PATH);
-            if (!rairFile.exists()) rairFile.mkdirs();
+            File rairFile = new File(storageDirectory, Constants.RAIR_PATH);
+            if (!rairFile.exists()) {
+                rairFile.mkdirs();
+            }
             return rairFile;
         }
         return getCacheDir();

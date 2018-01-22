@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rair.diary.R;
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 import com.rair.diary.db.DiaryDao;
 import com.rair.diary.utils.RairUtils;
 import com.rair.diary.view.LinedEditText;
@@ -73,7 +73,7 @@ public class DiaryDetailActivity extends AppCompatActivity {
         id = intent.getLongExtra("id", 0);
         detailEtTitle.setText(title);
         detailEtContent.setText(content);
-        detailTvTite.setText(String.format(Constans.FORMAT, date, week, weather));
+        detailTvTite.setText(String.format(Constants.FORMAT, date, week, weather));
         if (image != null || !image.equals("n") || !TextUtils.isEmpty(image)) {
             File file = new File(image);
             if (file.exists()) {

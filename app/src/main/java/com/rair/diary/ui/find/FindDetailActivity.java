@@ -127,7 +127,7 @@ public class FindDetailActivity extends AppCompatActivity implements View.OnClic
         findRvComments.setLayoutManager(layoutManager);
         findRvComments.setLoadingMoreEnabled(true);
         findRvComments.setPullRefreshEnabled(false);
-        adapter = new CommentRvAdapter(this, comments);
+        adapter = new CommentRvAdapter(this, R.layout.view_comment_item, comments);
         findRvComments.setAdapter(adapter);
         findRvComments.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

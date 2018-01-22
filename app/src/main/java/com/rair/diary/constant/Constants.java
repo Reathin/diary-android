@@ -4,7 +4,7 @@ package com.rair.diary.constant;
  * Created by mzaiy on 2017/6/5.
  */
 
-public class Constans {
+public class Constants {
     //DB
     public static final String DB_NAME = "diary.db";
     public static final int DB_VERSION = 2;

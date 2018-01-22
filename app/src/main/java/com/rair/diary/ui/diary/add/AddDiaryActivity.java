@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import com.rair.diary.R;
 import com.rair.diary.bean.DiaryBean;
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 import com.rair.diary.db.DiaryDao;
 import com.rair.diary.utils.RairUtils;
 import com.rair.diary.view.LinedEditText;
@@ -89,7 +89,7 @@ public class AddDiaryActivity extends AppCompatActivity {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
         mDate = dateFormat.format(date);
         mWeek = DateToWeek(date);
-        addTvTitle.setText(String.format(Constans.FORMAT,mDate,mWeek,""));
+        addTvTitle.setText(String.format(Constants.FORMAT,mDate,mWeek,""));
     }
 
     public String DateToWeek(Date date) {

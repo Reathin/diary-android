@@ -4,16 +4,16 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
     public DataBaseHelper(Context context) {
-        super(context, Constans.DB_NAME, null, Constans.DB_VERSION);
+        super(context, Constants.DB_NAME, null, Constants.DB_VERSION);
     }
 
     public DataBaseHelper(Context context, int version) {
-        super(context, Constans.DB_NAME, null, version);
+        super(context, Constants.DB_NAME, null, version);
     }
 
     /**

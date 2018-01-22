@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.rair.diary.R;
 import com.rair.diary.bean.DiaryBean;
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -67,7 +67,7 @@ public class DiaryRvAdapter extends RecyclerView.Adapter<DiaryRvAdapter.DiaryHol
                 holder.ivShow.setVisibility(View.GONE);
             }
         }
-        holder.tvDate.setText(String.format(Constans.FORMAT, diaryBean.getDate(), diaryBean.getWeek(), diaryBean.getWeather()));
+        holder.tvDate.setText(String.format(Constants.FORMAT, diaryBean.getDate(), diaryBean.getWeek(), diaryBean.getWeather()));
         final int mPosition = position;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

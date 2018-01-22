@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import com.rair.diary.R;
 import com.rair.diary.base.RairApp;
 import com.rair.diary.bean.User;
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 import com.rair.diary.utils.RairUtils;
 
 import java.io.File;
@@ -57,7 +57,7 @@ public class RecoverActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this, R.style.DialogStyle);
         progressDialog.setCanceledOnTouchOutside(false);
         File rairPath = RairApp.getRairApp().getRairPath();
-        sdPath = new File(rairPath, Constans.BACKUP_NAME).getAbsolutePath();
+        sdPath = new File(rairPath, Constants.BACKUP_NAME).getAbsolutePath();
     }
 
     @OnClick({R.id.recover_iv_back, R.id.recover_ll_upload, R.id.recover_ll_download})
@@ -120,7 +120,7 @@ public class RecoverActivity extends AppCompatActivity {
     private void doUpLoad() {
         progressDialog.setMessage("正在上传。。。");
         progressDialog.show();
-        String dbPath = this.getDatabasePath(Constans.DB_NAME).getAbsolutePath();
+        String dbPath = this.getDatabasePath(Constants.DB_NAME).getAbsolutePath();
         boolean success = copyFile(dbPath, sdPath);
         if (success) {
             final BmobFile dbFile = new BmobFile(new File(sdPath));
@@ -173,7 +173,7 @@ public class RecoverActivity extends AppCompatActivity {
                     if (e == null) {
                         RairUtils.showSnackar(recoverLlDownload, "下载成功,保存路径:" + s);
                         progressDialog.setMessage("正在还原。。。");
-                        String dbPath = RecoverActivity.this.getDatabasePath(Constans.DB_NAME).getAbsolutePath();
+                        String dbPath = RecoverActivity.this.getDatabasePath(Constants.DB_NAME).getAbsolutePath();
                         boolean success = pasteFile(sdPath, dbPath);
                         if (success) {
                             progressDialog.dismiss();

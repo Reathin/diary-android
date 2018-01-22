@@ -22,7 +22,7 @@ import com.rair.diary.R;
 import com.rair.diary.utils.RairUtils;
 import com.rair.diary.utils.SPUtils;
 import com.rair.diary.base.RairApp;
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 import com.rair.diary.service.RemindService;
 
 import java.util.Calendar;
@@ -75,7 +75,7 @@ public class NotifyActivity extends AppCompatActivity implements CompoundButton.
 
         receiver = new TimeChangeReceiver();
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(Constans.SET_RECEIVER);
+        intentFilter.addAction(Constants.SET_RECEIVER);
         intentFilter.setPriority(Integer.MAX_VALUE);
         // 注册广播接收器
         registerReceiver(receiver, intentFilter);
@@ -171,7 +171,7 @@ public class NotifyActivity extends AppCompatActivity implements CompoundButton.
     class TimeChangeReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Constans.SET_RECEIVER)) {
+            if (intent.getAction().equals(Constants.SET_RECEIVER)) {
                 handler.sendEmptyMessage(0x001);
             }
         }

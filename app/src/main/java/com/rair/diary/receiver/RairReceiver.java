@@ -13,7 +13,7 @@ import android.support.annotation.RequiresApi;
 import com.rair.diary.R;
 import com.rair.diary.utils.RairUtils;
 import com.rair.diary.base.RairApp;
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 import com.rair.diary.ui.MainActivity;
 
 import java.util.Calendar;
@@ -29,7 +29,7 @@ public class RairReceiver extends BroadcastReceiver {
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (intent.getAction().equals(Constans.REMIND_RECEIVER)) {
+        if (intent.getAction().equals(Constants.REMIND_RECEIVER)) {
             calendar.setTimeInMillis(System.currentTimeMillis());
             int h = calendar.get(Calendar.HOUR_OF_DAY);
             int m = calendar.get(Calendar.MINUTE);

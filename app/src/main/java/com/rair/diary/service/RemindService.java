@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 
 /**
  * Created by mzaiy on 2017/6/5.
@@ -29,7 +29,7 @@ public class RemindService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        sendBroadcast(new Intent(Constans.SET_RECEIVER));
+        sendBroadcast(new Intent(Constants.SET_RECEIVER));
         new Thread(new Runnable() {
 
             @Override
@@ -37,7 +37,7 @@ public class RemindService extends Service {
                 while (true) {
                     try {
                         Thread.sleep(60000);
-                        sendBroadcast(new Intent(Constans.REMIND_RECEIVER));
+                        sendBroadcast(new Intent(Constants.REMIND_RECEIVER));
                     } catch (Exception e) {
                     }
                 }

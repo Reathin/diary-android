@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rair.diary.R;
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,7 +42,7 @@ public class AboutActivity extends AppCompatActivity {
                 this.finish();
                 break;
             case R.id.about_tv_join:
-                joinQQGroup(Constans.QQ_KEY);
+                joinQQGroup(Constants.QQ_KEY);
                 break;
             case R.id.about_tv_version:
                 break;

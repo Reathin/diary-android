@@ -19,7 +19,7 @@ import com.jpeng.jptabbar.anno.SeleIcons;
 import com.jpeng.jptabbar.anno.Titles;
 import com.rair.diary.R;
 import com.rair.diary.base.RairApp;
-import com.rair.diary.constant.Constans;
+import com.rair.diary.constant.Constants;
 import com.rair.diary.ui.diary.DiaryFragment;
 import com.rair.diary.ui.find.FindFragment;
 import com.rair.diary.ui.setting.SetFragment;
@@ -62,10 +62,10 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         spUtils = RairApp.getRairApp().getSpUtils();
         mainJpTabbar.setTabListener(this);
         fragments = new Fragment[3];
-        if (spUtils.getBoolean(Constans.RECREATE, false)) {
+        if (spUtils.getBoolean(Constants.RECREATE, false)) {
             showFragment(2);
             mainJpTabbar.setSelectTab(2);
-            spUtils.put(Constans.RECREATE, false);
+            spUtils.put(Constants.RECREATE, false);
         } else {
             showFragment(0);
             boolean hasPatternPwd = spUtils.getBoolean("hasPatternPwd", false);
@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     @Override
     public void recreate() {
         super.recreate();
-        spUtils.put(Constans.RECREATE, true);
+        spUtils.put(Constants.RECREATE, true);
     }
 
     @Override
