@@ -84,9 +84,9 @@ public class UserActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    changeSex("nv");
+                    changeSex(1);
                 } else {
-                    changeSex("nan");
+                    changeSex(0);
                 }
             }
         });
@@ -111,7 +111,7 @@ public class UserActivity extends AppCompatActivity {
      *
      * @param sex 性别
      */
-    private void changeSex(String sex) {
+    private void changeSex(Integer sex) {
         User user = BmobUser.getCurrentUser(User.class);
         user.setSex(sex);
         user.update(new UpdateListener() {

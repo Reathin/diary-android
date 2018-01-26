@@ -35,7 +35,7 @@ public class CommentRvAdapter extends BaseQuickAdapter<Comment, BaseViewHolder> 
         User user = item.getUser();
         ImageView sexView = helper.getView(R.id.comment_item_iv_sex);
         if (user.getSex() != null) {
-            if (user.getSex().equals("nan")) {
+            if (user.getSex() == 0) {
                 Picasso.with(context).load(R.mipmap.male).into(sexView);
             } else {
                 Picasso.with(context).load(R.mipmap.female).into(sexView);

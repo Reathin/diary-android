@@ -17,7 +17,7 @@ public class User extends BmobUser {
     //昵称
     private String nickName;
     //性别
-    private String sex;
+    private Integer sex;
     //数据
     private BmobFile dbFile;
     //数据下载链接
@@ -57,11 +57,11 @@ public class User extends BmobUser {
         this.nickName = nickName;
     }
 
-    public String getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 

@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.jcodecraeer.xrecyclerview.XRecyclerView;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.rair.diary.R;
 import com.rair.diary.adapter.FindXrvAdapter;
 import com.rair.diary.bean.Diary;
@@ -31,10 +32,10 @@ import cn.bmob.v3.listener.FindListener;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FindFragment extends Fragment implements XRecyclerView.LoadingListener, FindXrvAdapter.OnRvItemClickListener {
+public class FindFragment extends Fragment implements BaseQuickAdapter.OnItemClickListener {
 
-    @BindView(R.id.find_xrv_list)
-    XRecyclerView findXrvList;
+    @BindView(R.id.find_rv_list)
+    RecyclerView findrvList;
     Unbinder unbinder;
     @BindView(R.id.find_tv_tip)
     TextView findTvTip;
@@ -63,11 +64,10 @@ public class FindFragment extends Fragment implements XRecyclerView.LoadingListe
 
     private void initView() {
         datas = new ArrayList<>();
-        findXrvList.setLayoutManager(new LinearLayoutManager(getContext()));
-        findXrvList.setLoadingListener(this);
-        findXrvAdapter = new FindXrvAdapter(getContext(), datas);
-        findXrvList.setAdapter(findXrvAdapter);
-        findXrvAdapter.setOnRvItemClickListener(this);
+        findrvList.setLayoutManager(new LinearLayoutManager(getContext()));
+        findXrvAdapter = new FindXrvAdapter(getContext(), R.layout.view_find_item, datas);
+        findrvList.setAdapter(findXrvAdapter);
+        findXrvAdapter.setOnItemClickListener(this);
         loadDiary();
     }
 
@@ -93,23 +93,21 @@ public class FindFragment extends Fragment implements XRecyclerView.LoadingListe
                     }
                     findXrvAdapter.notifyDataSetChanged();
                 } else {
-                    RairUtils.showSnackar(findXrvList, "加载失败，请稍后重试。");
-                    findXrvList.refreshComplete();
-                    findXrvList.loadMoreComplete();
+                    RairUtils.showSnackar(findrvList, "加载失败，请稍后重试。");
                 }
             }
         });
     }
 
     @Override
-    public void OnItemClick(int position) {
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         Diary diary = datas.get(position);
         User user = diary.getUser();
         Intent intent = new Intent(getContext(), FindDetailActivity.class);
         intent.putExtra("title", diary.getTitle());
         intent.putExtra("content", diary.getContent());
-        if (diary.getImage()!= null)
-        intent.putExtra("image", diary.getImage().getFileUrl());
+        if (diary.getImage() != null)
+            intent.putExtra("image", diary.getImage().getFileUrl());
         intent.putExtra("date", diary.getDate());
         intent.putExtra("week", diary.getWeek());
         intent.putExtra("weather", diary.getWeather());
@@ -123,18 +121,12 @@ public class FindFragment extends Fragment implements XRecyclerView.LoadingListe
         startActivity(intent);
     }
 
-    @Override
-    public void onRefresh() {
-        datas.clear();
-        pageNum = 0;
-        loadDiary();
-        findXrvList.refreshComplete();
-    }
-
-    @Override
-    public void onLoadMore() {
-        findXrvList.loadMoreComplete();
-    }
+//    @Override
+//    public void onRefresh() {
+//        datas.clear();
+//        pageNum = 0;
+//        loadDiary();
+//    }
 
     @Override
     public void onHiddenChanged(boolean hidden) {

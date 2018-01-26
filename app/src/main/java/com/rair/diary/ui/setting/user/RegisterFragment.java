@@ -88,7 +88,7 @@ public class RegisterFragment extends Fragment {
         user.setSign("编辑个性签名");
         user.setEmail(userMail);
         user.setNickName(userName);
-        user.setSex("nan");
+        user.setSex(0);
         user.setPassword(userPwd);
         user.signUp(new SaveListener<User>() {
             @Override

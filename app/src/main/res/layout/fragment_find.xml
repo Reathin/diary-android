@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     tools:context="com.rair.diary.ui.find.FindFragment">
 
-    <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/find_xrv_list"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/find_rv_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
