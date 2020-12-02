@@ -33,7 +33,7 @@ QQ_KEY：QQ群加群组件key
 
 因为在多台pc上写的，所以结构比较乱。
 
-欢迎您联系反馈，rairmmd@gmail.com
+欢迎您联系反馈，rairmmd@qq.com
 
 [1]:https://github.com/Rairmmd/Diary/blob/master/screenshots/Screenshot1.jpg
 
